@@ -1,0 +1,44 @@
+<mvc:View controllerName="com.gr.demo.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" xmlns:form="sap.ui.layout.form" xmlns:smartForm="sap.ui.comp.smartform" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:smartTable="sap.ui.comp.smarttable">
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>title}" showFooter="{app>/isEdit}" floatingFooter="true">
+				<content>
+					<smartForm:SmartForm id="smartFormColumn" title="Smart Form" editTogglable="true" editToggled="onChange">
+						<smartForm:layout>
+							<smartForm:Layout labelSpanL="4" emptySpanL="4" />
+						</smartForm:layout>
+						<smartForm:Group label="{i18n>formTitle}">
+							<smartForm:GroupElement>
+								<smartField:SmartField value="{EmployeeID}" />
+							</smartForm:GroupElement>
+							<smartForm:GroupElement>
+								<smartField:SmartField value="{FirstName}" />
+							</smartForm:GroupElement>
+							<smartForm:GroupElement>
+								<smartField:SmartField value="{LastName}" />
+							</smartForm:GroupElement>
+							<smartForm:GroupElement>
+								<smartField:SmartField value="{BirthDate}" />
+							</smartForm:GroupElement>
+						</smartForm:Group>
+					</smartForm:SmartForm>
+					<smartTable:SmartTable id="idSmartTable" tableType="ResponsiveTable" entitySet="Products" smartFilterId="smartFilterBar" useExportToExcel="true" useVariantManagement="true" useTablePersonalisation="true" header="Products" showRowCount="true" persistencyKey="SmartTable" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+						<smartTable:customToolbar>
+							<OverflowToolbar design="Transparent">
+								<ToolbarSpacer />
+								<Button icon="sap-icon://add" tooltip="{i18n>add}" type="Transparent" press="onCreate" />
+							</OverflowToolbar>
+						</smartTable:customToolbar>
+					</smartTable:SmartTable>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+						<Button type="Accept" text="{i18n>save}" tooltip="{i18n>save}" press="onSave" />
+						<Button type="Reject" text="{i18n>cancel}" tooltip="{i18n>cancel}" press="onCancel" />
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

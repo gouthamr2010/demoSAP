@@ -1,0 +1,91 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/V3/Northwind/Northwind.svc/$metadata">
+        <edmx:Include Namespace="NorthwindModel" />
+        <edmx:Include Namespace="ODataWebV3.Northwind.Model" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.gr">
+            <Annotations Target="NorthwindModel.Employee/EmployeeID">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/ReadOnly" />
+                <Annotation Term="Common.Label" String="Employee ID" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Employee/FirstName">
+                <Annotation Term="Common.Label" String="First Name" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Employee/LastName">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                <Annotation Term="Common.Text" String="Last Name" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductID" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductName" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CategoryID" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplierID" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Discontinued" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitsInStock" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitPrice" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitsOnOrder" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/ProductID">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                <Annotation Term="Common.Label" String="Product ID" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/ProductName">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                <Annotation Term="Common.Label" String="Product Name" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/CategoryID">
+                <Annotation Term="Common.Label" String="Category Id" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/SupplierID">
+                <Annotation Term="Common.Label" String="Supplier Id" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/Discontinued">
+                <Annotation Term="Common.Label" String="Discontinued" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/UnitsInStock">
+                <Annotation Term="Common.Label" String="Units In Stock" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/UnitPrice">
+                <Annotation Term="Common.Label" String="Unit Price" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Product/UnitsOnOrder">
+                <Annotation Term="Common.Label" String="Units On Order" />
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
